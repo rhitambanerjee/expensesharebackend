@@ -1,8 +1,8 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const conn = require("./config/db");
-const userRouter = require('./routes/userRoutes');
-const expenseRouter = require('./routes/expenseRoutes');
+const userRouter = require("./routes/userRoutes");
+const expenseRouter = require("./routes/expenseRoutes");
 
 dotenv.config();
 
@@ -12,8 +12,8 @@ app.use(express.json());
 const PORT = process.env.PORT || 3000;
 conn();
 
-app.use('/user',userRouter);
-app.use('/expense',expenseRouter);
+app.use("/user", userRouter);
+app.use("/expense", expenseRouter);
 
 app.get("/", (req, res) => {
   res.send("hello");
